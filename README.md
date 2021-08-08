@@ -176,6 +176,10 @@ axios.request(options).then(function (response) {
 	console.error(error);
 });
   ```
+  
+  Response from above is html page that plays the movie .You can use it as a iframe in your application.
+  
+  Example Response 
 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
