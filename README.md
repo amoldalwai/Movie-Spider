@@ -47,7 +47,7 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#installation">How to Use</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -67,12 +67,12 @@
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Movie spider uses web scrapping and searches for latest Hollywood, Bollywood, Tollywood and  movies from various sites and provides video streaming links directly.
-Movie links are provided from video hosting platforms such as vidcloud, doodstram, streamtape, mixdrop .The web crawler searches these sites for following title of imdb id provided and then returns the video url 
+Movie links are provided from video hosting platforms such as vidcloud, doodstram, streamtape, mixdrop .The web crawler searches these sites for following title of imdb id provided and then returns the video url.
 
 Why to choose it :
-* It is a free service created for educational purposes , that provides direct links to movie hosting services
-* It uses IMDb Id or title of the movie to search from torrente sites that you can play on your browser
-* Has collection of 10000+ movies 
+* It is a free service created for educational purposes , that provides direct links to movie hosting services.
+* It uses IMDb Id or title of the movie to search from torrente sites that you can play on your browser.
+* Has collection of 10000+ movies.
 
 
 ### Built With
@@ -85,39 +85,98 @@ The Api is built using Python Flask and uses Webscraping throught Beautiful Soup
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Movie Spiders is a Simple REST API ,that you can integrate with other languages like Python,JavaScript any many more.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Following Instructions are for how to integrate it with  Node.js using axios
 
-### Installation
+### How to use
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
+1. Get a free API Key at [https://rapidapi.com/amol.dalwai/api/movie-spider](https://rapidapi.com/amol.dalwai/api/movie-spider)
+
 3. Install NPM packages
    ```sh
-   npm install
+   npm install axios
    ```
 4. Enter your API in `config.js`
    ```JS
-   const API_KEY = 'ENTER YOUR API';
+   const API_KEY = 'ENTER YOUR API KEY';
    ```
-
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+1. `GET\imdb`
+To search movies by imdb id do the following .
+ ```JS
+   var axios = require("axios").default;
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+var options = {
+  method: 'GET',
+  url: 'https://movie-spider.p.rapidapi.com/imdb',
+  params: {id: 'YOUR IMDB ID eg. tt0816692'},
+  headers: {
+    'x-rapidapi-key': 'YOUR API KEY from config.js',
+    'x-rapidapi-host': 'movie-spider.p.rapidapi.com'
+  }
+};
+
+axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+ ```
+ Example Response
+ ```
+ {
+imdb_id: {
+id: "tt0816692"
+},
+movie_links: {
+vidcloud: "/play?server=vidcloud&id=9Q55Xpd",
+multiserver: "/play?server=multiserver&id=y277MIV",
+doodstream: "/play?server=doodstream&id=upccOZJ",
+123movies: "/play?server=123movies&id=dBlljAc",
+Fembed: "/play?&id=OQXXGby&server=fembed",
+MultiSource: "/play?server=multisource&id=GKSS8bv",
+Dbgo: "/play?&id=C2hhf1V&server=dbgo",
+1movie: "/play?&id=V3SSe91&server=1movie",
+HLS: "/play?&id=KbssBuA&server=hls",
+Gdrive-VIP: "/play?server=gdrivevip&id=eL33dai",
+Streamtape: "/play?&id=ZqMMCBl&server=streamtape"
+},
+message: {
+status_code: "200_OK"
+}
+}
+ ```
+ Now copy any  link from video_url list from the response and save the server and unique id 
+
+ 
+ 2. `GET\play`
+The id and server name received from above request ,pass them in the PLAY endpoint like  .
+ ```JS
+ var axios = require("axios").default;
+
+var options = {
+  method: 'GET',
+  url: 'https://movie-spider.p.rapidapi.com/play',
+  params: {server: 'Server name from above imdb response eg.vidcloud', id: ' Unique id from above imdb response eg.RXQXuRdX'},
+  headers: {
+    'x-rapidapi-key': 'API KEY ',
+    'x-rapidapi-host': 'movie-spider.p.rapidapi.com'
+  }
+};
+
+axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+  ```
+
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -126,7 +185,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
 
 
 
