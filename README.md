@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/amoldalwai/Movie-Spider/">
     <img src="https://github.com/amoldalwai/Movie-Spider/blob/main/WatchAnyMovieLogo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -20,14 +20,14 @@
   <p align="center">
     An awesome API uses web scrapping and searches for latest Bollywood, Tollywood and Hollywood movies from various sites and provides video streaming links directly!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://rapidapi.com/amol.dalwai/api/movie-spider"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://rapidapi.com/amol.dalwai/api/movie-spider">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/amoldalwai/Movie-Spider/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/amoldalwai/Movie-Spider/issues">Request Feature</a>
   </p>
 </p>
 
@@ -64,7 +64,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Movie spider uses web scrapping and searches for latest Hollywood, Bollywood, Tollywood and  movies from various sites and provides video streaming links directly.
 Movie links are provided from video hosting platforms such as vidcloud, doodstram, streamtape, mixdrop .The web crawler searches these sites for following title of imdb id provided and then returns the video url.
@@ -232,20 +231,6 @@ Copy any of the links in video url as the srouce of the iframe in your applicati
 _For more examples, please refer to the [Documentation](https://rapidapi.com/amol.dalwai/api/movie-spider)_
 
 
-
-<!-- ROADMAP -->
-## Roadmap
-
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-
-
-
-
 <!-- LICENSE -->
 ## License
 
@@ -255,7 +240,6 @@ Created for educational purposes
 
 <!-- CONTACT -->
 ## Contact
-
 
 Project Link: [https://github.com/amoldalwai/Movie-Spider/](https://github.com/amoldalwai/Movie-Spider/)
 
