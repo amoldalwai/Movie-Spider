@@ -183,6 +183,50 @@ axios.request(options).then(function (response) {
   <img src="https://github.com/amoldalwai/Movie-Spider/blob/main/play_example_response.PNG" align="center" alt="example response play" width="500" height="270">
   
   
+3. `GET\title`
+To search movies by title it requires a server id and title of movie. 
+* Valid values of server id is 1 to 7 eg. server=3
+* Title of the movie should conatin space if there is space in movies name eg.title=fast and furious 9 or if there is no space in movie name eg. title=interstellar
+* Not all server have all the movie links ,hence it is better to try in all servers.
+ ```JS
+  var axios = require("axios").default;
+
+var options = {
+  method: 'GET',
+  url: 'https://movie-spider.p.rapidapi.com/search',
+  params: {server: 'SERVER ID eg. 3', title: 'TITLE OF MOVIE TO SEARCH eg. fast and furious 9'},
+  headers: {
+    'x-rapidapi-key': 'API KEY ',
+    'x-rapidapi-host': 'movie-spider.p.rapidapi.com'
+  }
+};
+
+axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+```
+Example response 
+```
+{
+title_query: {
+title: "fast+and+furious+9"
+},
+video_url: [
+"https://pkspeed.net/s48xrnxkjpd6.html",
+"https://dood.so/e/uuyhbbjbilqc",
+"//mixdrop.sx/f/rw3ql6jxs7z0gj",
+"https://www.moviesmanha.com/fast-and-furious-9-2021-english-full-movie-watch-online-hd-print-free-download/"
+],
+message: {
+status_code: "200",
+status_message: "Movie found"
+},
+```
+
+Copy any of the links in video url as the srouce of the iframe in your application 
+
 
 
 _For more examples, please refer to the [Documentation](https://rapidapi.com/amol.dalwai/api/movie-spider)_
